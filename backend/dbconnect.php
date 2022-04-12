@@ -8,7 +8,7 @@
     // 2. username: tên tài khoản được phép truy cập vào database server
     // 3. password: mật khẩu tài khoản được phép truy cập vào database server
     // 4. database_name: tên database bạn muốn truy cập đến
-    $conn = mysqli_connect('localhost','root','','test') or die('Xin lỗi, không thể kết nối database');
+    $conn = mysqli_connect('localhost','root','','eshop') or die('Sorry. Connect to database is failed. Please try again later.');
 
     // Tùy chỉnh kết nối
     // Set charset là utf-8 đối với kết nối này. Dùng để gõ tiếng Việt, Nhật, Thái, Trung Quốc ...
@@ -16,4 +16,6 @@
     $conn->query("SET NAMES 'utf8mb4'");
     $conn->query("SET CHARACTER SET UTF8MB4");
     $conn->query("SET SESSION collation_connection = 'utf8mb4_unicode_ci'");
+
+    echo "Connection to database is established!";
 ?>
