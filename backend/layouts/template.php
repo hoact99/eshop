@@ -1,12 +1,12 @@
 <!-- Nhúng file cấu hình để xác định được Tên và Tiêu đề của trang hiện tại người dùng đang truy cập -->
-<?php include_once('../layouts/config.php'); ?>
+<?php include_once('config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
     <!-- Nhúng file quản lý phần HEAD -->
-    <?php include_once('../layouts/head.php'); ?>
+    <?php include_once('head.php'); ?>
 
 </head>
 
@@ -16,11 +16,11 @@
     <div id="wrapper">
 
         <!-- header -->
-        <?php include_once('../layouts/partials/header.php'); ?>
+        <?php include_once('partials/header.php'); ?>
         <!-- end header -->
 
         <!-- sidebar -->
-        <?php include_once('../layouts/partials/sidebar.php'); ?>
+        <?php include_once('partials/sidebar.php'); ?>
         <!-- end sidebar -->
 
         <!-- Content Wrapper -->
@@ -30,23 +30,18 @@
             <div id="content">
 
                 <!-- topbar -->
-                <?php include_once('../layouts/partials/topbar.php'); ?>
+                <?php include_once('partials/topbar.php'); ?>
                 <!-- end topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-
-                </div>
+                <?=$content;?> 
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
 
             <!-- footer -->
-            <?php include_once('../layouts/partials/footer.php'); ?>
+            <?php include_once('partials/footer.php'); ?>
             <!-- end footer -->
 
         </div>
@@ -81,7 +76,7 @@
     </div>
 
     <!-- Nhúng file quản lý phần SCRIPT JAVASCRIPT -->
-    <?php include_once('../layouts/scripts.php'); ?>
+    <?php include_once('scripts.php'); ?>
 
     <!-- Các file Javascript sử dụng riêng cho trang này, liên kết tại đây -->
     <!-- <script src="..."></script> -->
