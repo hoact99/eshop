@@ -1,0 +1,198 @@
+CREATE DATABASE eshop;
+
+USE eshop;
+
+DROP DATABASE eshop;
+
+CREATE TABLE specifications (
+	specification_id int PRIMARY,
+    specification_name char(50)
+);
+
+CREATE TABLE product_specifications (
+	productspec_id int PRIMARY,
+    specification_id int,
+    product_id int,
+    productspec_value tinytext,
+    FOREIGN KEY (specification_id) REFERENCES specifications(specification_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+CREATE TABLE images (
+	image_id int PRIMARY,
+    image_url text,
+    image_title char(100),
+    image_content text,
+    image_created_time timestamp,
+    image_is_visible boolean
+);
+
+CREATE TABLE product_images (
+	productimage_id int PRIMARY,
+    image_id int,
+    product_id int,
+    FOREIGN KEY (image_id) REFERENCES images(image_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+CREATE TABLE commentimages (
+	commentimage_id int PRIMARY,
+    comment_id int,
+    image_id int,
+    FOREIGN KEY (comment_id) REFERENCES comments(comment_id),
+    FOREIGN KEY (image_id) REFERENCES images(image_id)
+);
+
+CREATE TABLE comments (
+	comment_id int PRIMARY,
+    product_id int,
+    customer_id int,
+    comment_contents text,
+    comment_created_date timestamp,
+    comment_stars tinyint(2),
+    FOREIGN KEY (product_id) REFERENCES products(product_id),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+CREATE TABLE products (
+	product_id int PRIMARY,
+    category_id int,
+    brand_id int,
+    supplier_id int,
+    product_name char(50),
+    product_quantity int,
+    product_unitprice int,
+    product_discount tinyint(3),
+    product_views int,
+    FOREIGN KEY (category_id) REFERENCES categories(category_id),
+    FOREIGN KEY (brand_id) REFERENCES brands(brand_id),
+    FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
+);
+
+CREATE TABLE categories (
+	category_id int PRIMARY,
+    parentcategory_id int,
+    category_name char(50),
+    category_description tinytext,
+    FOREIGN KEY (parentcategory_id) REFERENCES parentcategories(parentcategory_id)
+);
+
+CREATE TABLE parentcategories (
+	parentcategory_id int PRIMARY,
+    parentcategory_name char(50),
+    parentcategory_description tinytext
+);
+
+CREATE TABLE brands (
+	brand_id int PRIMARY,
+    brand_name char(50),
+    brand_description tinytext
+);
+
+CREATE TABLE orderstatus (
+	orderstatus_id int PRIMARY,
+    orderstatus_name char(50),
+    orderstatus_description tinytext
+);
+
+CREATE TABLE orders (
+	order_id int PRIMARY,
+    employee_id int,
+    customer_id int,
+    orderstatus_id int,
+    payment_id int,
+    shipper_id int,
+    order_created_time timestamp,
+    order_payment_time timestamp,
+	order_ship_date timestamp,
+    order_shipped_time timestamp,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (orderstatus_id) REFERENCES orderstatus(orderstatus_id),
+    FOREIGN KEY (payment_id) REFERENCES payments(payment_id),
+    FOREIGN KEY (shipper_id) REFERENCES shippers(shipper_id)
+);
+
+CREATE TABLE orderdetails (
+	orderdetail int PRIMARY,
+    order_id int,
+    product_id int,
+    orderdetail_quantity int,
+    orderdetail_unitprice int,
+    orderdetail_discount tinyint(3),
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+CREATE TABLE payments (
+	payment_id int PRIMARY,
+  	payment_name char(50),
+    payment_bank_account_number varchar(20),
+    payment_bank_account_name char(50)
+);
+
+CREATE TABLE employees (
+	employee_id int PRIMARY,
+    position_id int,
+    person_id int,
+    employee_hire_date date,
+    FOREIGN KEY (position_id) REFERENCES positions(position_id),
+    FOREIGN KEY (person_id) REFERENCES person(person_id)
+);
+
+CREATE TABLE customers (
+	customer_id int PRIMARY,
+    person_id int,
+    FOREIGN KEY (person_id) REFERENCES person(person_id)
+);
+
+CREATE TABLE positions (
+	position_id int PRIMARY,
+    position_name char(50),
+    position_description tinytext
+);
+
+CREATE TABLE suppliers (
+	supplier_id int PRIMARY,
+    person_id int,
+    supplier_company_name char(100),
+    supplier_fax varchar(20),
+    supplier_website tinytext,
+    FOREIGN KEY (person_id) REFERENCES person(person_id)
+);
+
+CREATE TABLE person (
+	person_id int PRIMARY,
+    account_id int,
+    person_name char(50),
+    person_birth_date date,
+    person_address tinytext,
+    person_city char(20),
+    person_phone varchar(15),
+    person_email char(50),
+    person_identity_card_number varchar(15),
+    FOREIGN KEY (account_id) REFERENCES accounts(account_id)
+);
+
+CREATE TABLE accounts (
+	account_id int PRIMARY,
+    permission_id int,
+    account_username varchar(20),
+    account_password text,
+    account_is_active tinyint(1),
+    FOREIGN KEY (permission_id) REFERENCES permissions(permission_id)
+);
+
+CREATE TABLE permissions (
+	permission_id int PRIMARY,
+    permission_name char(50),
+    permission_description tinytext
+);
+
+CREATE TABLE shipper (
+	shipper_id int PRIMARY,
+    person_id int,
+    shipper_motor_license_plates_number varchar(20),
+    shipper_motor_name char(50),
+    FOREIGN KEY (person_id) REFERENCES person(person_id)
+);
