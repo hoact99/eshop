@@ -26,3 +26,6 @@
 <!-- Input length scripts -->
 <script src="../../../assets/js/self-define-js/input-length.js"></script>
 <script src="../../../assets/js/self-define-js/sidebar-set.js"></script>
+
+<!-- Set mode -->
+<script src="../../../assets/js/self-define-js/set-mode.js"></script>
