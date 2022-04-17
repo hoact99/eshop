@@ -1,8 +1,7 @@
 <?php include '../../layouts/functions.php'; ?>
 <?php start_content('Home page'); ?>
 
-<!-- Begin Page Content -->
-<div class="container-fluid">
+<div>
 
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Buttons</h1>
@@ -185,6 +184,5 @@
     </div>
 
 </div>
-<!-- /.container-fluid -->
 
 <?php end_content(); ?>

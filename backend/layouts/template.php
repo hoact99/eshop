@@ -34,7 +34,9 @@
                 <!-- end topbar -->
 
                 <!-- Begin Page Content -->
-                <?=$content;?> 
+                <div class="container-fluid">
+                    <?=$content;?> 
+                </div>
                 <!-- /.container-fluid -->
 
             </div>

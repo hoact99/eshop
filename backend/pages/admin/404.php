@@ -1,7 +1,7 @@
 <?php include '../../layouts/functions.php'; ?>
 <?php start_content('Home page'); ?>
-<!-- Begin Page Content -->
-<div class="container-fluid">
+
+<div>
 
     <!-- 404 Error Text -->
     <div class="text-center">
@@ -12,5 +12,5 @@
     </div>
 
 </div>
-<!-- /.container-fluid -->
+
 <?php end_content(); ?>

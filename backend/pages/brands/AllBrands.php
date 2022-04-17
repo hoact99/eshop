@@ -1,7 +1,7 @@
 <?php include '../../layouts/functions.php'; ?>
 <?php start_content('Home page'); ?>
-<!-- Begin Page Content -->
-<div class="container-fluid">
+
+<div>
 
     <?php 
         // Truy vấn database để lấy danh sách
@@ -89,5 +89,5 @@
     </script>
 
 </div>
-<!-- /.container-fluid -->
+
 <?php end_content(); ?>

@@ -1,7 +1,7 @@
 <?php include '../../layouts/functions.php'; ?>
 <?php start_content('Home page'); ?>
-<!-- Begin Page Content -->
-<div class="container-fluid">
+
+<div>
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
@@ -62,5 +62,5 @@
         ?>
 
 </div>
-<!-- /.container-fluid -->
+
 <?php end_content(); ?>
