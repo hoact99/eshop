@@ -58,7 +58,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <form method="post" class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -71,11 +71,18 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../login/login.php">Logout</a>
+                    <button class="btn btn-primary" name="btnLogout">Logout</button>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
+
+    <?php
+        if (isset($_POST['btnLogout'])) {
+            session_destroy();
+            echo '<script>location.href = "../login/login.php";</script>';
+        }
+    ?>
 
     <!-- Nhúng file quản lý phần SCRIPT JAVASCRIPT -->
     <?php include_once('scripts.php'); ?>

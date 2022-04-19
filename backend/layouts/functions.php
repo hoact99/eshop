@@ -1,4 +1,10 @@
 <?php 
+    
+    session_start();
+    if (!isset($_SESSION["login"]) || $_SESSION["login"] == false) {
+        header('location:../login/login.php');
+    }
+
     $title = 'Page title';
     $layout = 'template.php';
     function start_content($page_title = '', $page_layout = 'template.php') {
@@ -12,4 +18,5 @@
         global $title, $layout;
         include($layout);
     }
+    
 ?>

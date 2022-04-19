@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include_once(__DIR__ . '/../../dbconnect.php');
 
     $username = $_POST['username'];
@@ -9,6 +11,7 @@
     $count = mysqli_num_rows($result);
 
     if ($count == 1) {
+        $_SESSION["login"] = true;
         header('location:../admin/index.php');
     }
 ?>
