@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
 <!-- Custom styles for this template-->
-<link href="../../../assets/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="../../../assets/css/sb-admin-2.css" rel="stylesheet">
 <link href="../../../assets/css/custom-styles.css" rel="stylesheet">
 
 <!-- Custom styles for this page -->
 <link href="../../../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+<link href="../../../assets/css/themes.css" rel="stylesheet">
