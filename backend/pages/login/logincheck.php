@@ -8,10 +8,20 @@
 
     $sql = "SELECT * FROM `accounts` WHERE username='$username' and password='$password'";
     $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
+
+    $id = $row["id"];
+
+    $sql = "SELECT * FROM `persons` join `accounts` on persons.id='$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    $fullname = $row["name"];
 
     if ($count == 1) {
         $_SESSION["login"] = true;
+        $_SESSION["fullname"] = $fullname;
         header('location:../admin/index.php');
     }
 ?>
