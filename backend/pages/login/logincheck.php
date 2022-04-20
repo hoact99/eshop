@@ -13,15 +13,21 @@
 
     $id = $row["id"];
 
-    $sql = "SELECT * FROM `persons` join `accounts` on persons.id='$id'";
+    $sql = 
+    "SELECT persons.name as person_name, permissions.name as permission_name
+    FROM `accounts` 
+    JOIN `persons` ON persons.id='$id' JOIN `permissions` ON accounts.id='$id'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-    $fullname = $row["name"];
+    $fullname = $row["person_name"];
+    $permission = $row["permission_name"];
 
     if ($count == 1) {
         $_SESSION["login"] = true;
         $_SESSION["fullname"] = $fullname;
+        $_SESSION["permission"] = $permission;
         header('location:../admin/index.php');
     }
+
 ?>

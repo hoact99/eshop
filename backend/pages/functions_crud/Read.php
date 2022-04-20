@@ -28,7 +28,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h5 class="m-0 font-weight-bold text-primary">Quản lý <?= $vi_page_name; ?></h5>
+            <h5 class="m-0 font-weight-bold text-primary">Quản lý <?= $CONFIG_NAME_VI; ?></h5>
             <a href="../functions_crud/Create.php?tb=<?= $TABLENAME ?>" class="btn btn-primary">Thêm mới</a>
         </div>
         <div class="card-body">
@@ -38,9 +38,9 @@
                     <thead>
                         <tr>
                             <th class="col-1">Mã</th>
-                            <th>Tên <?= $vi_page_name ?></th>
-                            <th class="col-7">Mô tả</th>
-                            <th>Hành động</th>
+                            <th>Tên <?= $CONFIG_NAME_VI ?></th>
+                            <th>Mô tả</th>
+                            <th class="col-2">Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -65,7 +65,7 @@
             </div>
             <?php 
                 else:
-                    echo 'Bạn chưa có ' . $vi_page_name . ' nào.';
+                    echo 'Bạn chưa có ' . $CONFIG_NAME_VI . ' nào.';
                 endif; 
             ?>
         </div>

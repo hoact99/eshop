@@ -30,7 +30,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h5 class="m-0 font-weight-bold text-primary">Quản lý Thương hiệu</h5>
+            <h5 class="m-0 font-weight-bold text-primary">Quản lý <?= $CONFIG_TITLE ?></h5>
             <a href="CreateBrand.php" class="btn btn-primary">Thêm mới</a>
         </div>
         <div class="card-body">
