@@ -1,7 +1,7 @@
 <?php include '../../layouts/functions.php'; ?>
 <?php start_content('Home page'); ?>
 
-<div>
+<div class="d-none">
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
