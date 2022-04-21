@@ -1,4 +1,6 @@
 <?php 
+    include('person.php');
+
     class Employee extends Person {
         private $person_id;
         private $position_id;

@@ -11,6 +11,7 @@
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
 
+    //ID of accounts table
     $id = $row["id"];
 
     $sql = 
@@ -20,8 +21,12 @@
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
+    print_r($row);
+
     $fullname = $row["person_name"];
     $permission = $row["permission_name"];
+
+    echo $fullname;
 
     if ($count == 1) {
         $_SESSION["login"] = true;
