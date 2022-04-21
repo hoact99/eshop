@@ -6,61 +6,125 @@
     // Tùy theo đường dẫn URL, set giá trị Tên trang và Tiêu đề phù hợp
 
     $SHOP_NAME = "ANC";
+    $PAGE_TITLE = "Quản trị " . $SHOP_NAME;
 
     switch ($_SERVER['SCRIPT_NAME']) {
-        //CRUD Danh mục Loại sản phẩm
-        case "/php/eshop/backend/pages/admin/404.php":
-            $CURRENT_PAGE = "backend.pages.admin.404";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | 404";
+        case "/php/eshop/backend/pages/manage/accounts.php":
+            $CURRENT_PAGE = "backend.manage.accounts";
+            $CONFIG_NAME = "Accounts";
+            $CONFIG_NAME_VI = "Tài khoản";
             break;
-        case "/php/eshop/backend/pages/admin/blank.php":
-            $CURRENT_PAGE = "backend.pages.admin.blank";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Blank";
+        case "/php/eshop/backend/pages/manage/brands.php":
+            $CURRENT_PAGE = "backend.manage.brands";
+            $CONFIG_NAME = "Brands";
+            $CONFIG_NAME_VI = "Thương hiệu";
             break;
-        case "/php/eshop/backend/pages/admin/buttons.php":
-            $CURRENT_PAGE = "backend.pages.admin.buttons";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Buttons";
+        case "/php/eshop/backend/pages/manage/categories.php":
+            $CURRENT_PAGE = "backend.manage.categories";
+            $CONFIG_NAME = "Categories";
+            $CONFIG_NAME_VI = "Danh mục con";
             break;
-        case "/php/eshop/backend/pages/admin/cards.php":
-            $CURRENT_PAGE = "backend.pages.admin.cards";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Cards";
+        case "/php/eshop/backend/pages/manage/comment_images.php":
+            $CURRENT_PAGE = "backend.manage.comment_images";
+            $CONFIG_NAME = "Comment Images";
+            $CONFIG_NAME_VI = "Hình ảnh bình luận";
             break;
-        case "/php/eshop/backend/pages/admin/charts.php":
-            $CURRENT_PAGE = "backend.pages.admin.charts";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Charts";
+        case "/php/eshop/backend/pages/manage/comments.php":
+            $CURRENT_PAGE = "backend.manage.comments";
+            $CONFIG_NAME = "Comments";
+            $CONFIG_NAME_VI = "Bình luận";
             break;
-        case "/php/eshop/backend/pages/admin/tables.php":
-            $CURRENT_PAGE = "backend.pages.admin.tables";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Tables";
+        case "/php/eshop/backend/pages/manage/customers.php":
+            $CURRENT_PAGE = "backend.manage.customers";
+            $CONFIG_NAME = "Customers";
+            $CONFIG_NAME_VI = "Khách hàng";
             break;
-        case "/php/eshop/backend/pages/admin/utilities-animation.php":
-            $CURRENT_PAGE = "backend.pages.admin.utilities-animation";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Utilities Animation";
+        case "/php/eshop/backend/pages/manage/employees.php":
+            $CURRENT_PAGE = "backend.manage.employees";
+            $CONFIG_NAME = "Employees";
+            $CONFIG_NAME_VI = "Nhân viên";
             break;
-        case "/php/eshop/backend/pages/admin/utilities-border.php":
-            $CURRENT_PAGE = "backend.pages.admin.utilities-border";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Utilities Border";
+        case "/php/eshop/backend/pages/manage/images.php":
+            $CURRENT_PAGE = "backend.manage.images";
+            $CONFIG_NAME = "Images";
+            $CONFIG_NAME_VI = "Hình ảnh";
             break;
-        case "/php/eshop/backend/pages/admin/utilities-color.php":
-            $CURRENT_PAGE = "backend.pages.admin.utilities-color";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Utilities Color";
+        case "/php/eshop/backend/pages/manage/order_details.php":
+            $CURRENT_PAGE = "backend.manage.order_details";
+            $CONFIG_NAME = "Order Details";
+            $CONFIG_NAME_VI = "Chi tiết đơn hàng";
             break;
-        case "/php/eshop/backend/pages/admin/utilities-other.php":
-            $CURRENT_PAGE = "backend.pages.admin.utilities-other";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Utilities Other";
+        case "/php/eshop/backend/pages/manage/order_status.php":
+            $CURRENT_PAGE = "backend.manage.order_status";
+            $CONFIG_NAME = "Order Status";
+            $CONFIG_NAME_VI = "Trạng thái đơn hàng";
             break;
-        case "/php/eshop/backend/pages/brands/AllBrands.php":
-            $CURRENT_PAGE = "backend.pages.brands";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Thương hiệu";
+        case "/php/eshop/backend/pages/manage/orders.php":
+            $CURRENT_PAGE = "backend.manage.orders";
+            $CONFIG_NAME = "Orders";
+            $CONFIG_NAME_VI = "Đơn hàng";
             break;
-        case "/php/eshop/backend/pages/brands/CreateBrand.php":
-            $CURRENT_PAGE = "backend.pages.brands";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME . " | Tạo Thương hiệu mới";
+        case "/php/eshop/backend/pages/manage/parent_categories.php":
+            $CURRENT_PAGE = "backend.manage.parent_categories";
+            $CONFIG_NAME = "Parent Categories";
+            $CONFIG_NAME_VI = "Danh mục cha";
+            break;
+        case "/php/eshop/backend/pages/manage/payments.php":
+            $CURRENT_PAGE = "backend.manage.payments";
+            $CONFIG_NAME = "Payments";
+            $CONFIG_NAME_VI = "Hình thức thanh toán";
+            break;
+        case "/php/eshop/backend/pages/manage/permissions.php":
+            $CURRENT_PAGE = "backend.manage.permissions";
+            $CONFIG_NAME = "Permissions";
+            $CONFIG_NAME_VI = "Quyền người dùng";
+            break;
+        case "/php/eshop/backend/pages/manage/persons.php":
+            $CURRENT_PAGE = "backend.manage.persons";
+            $CONFIG_NAME = "Persons";
+            $CONFIG_NAME_VI = "Người dùng";
+            break;
+        case "/php/eshop/backend/pages/manage/positions.php":
+            $CURRENT_PAGE = "backend.manage.positions";
+            $CONFIG_NAME = "Positions";
+            $CONFIG_NAME_VI = "Chức vụ";
+            break;
+        case "/php/eshop/backend/pages/manage/product_images.php":
+            $CURRENT_PAGE = "backend.manage.product_images";
+            $CONFIG_NAME = "Product Images";
+            $CONFIG_NAME_VI = "Hình ảnh sản phẩm";
+            break;
+        case "/php/eshop/backend/pages/manage/product_specifications.php":
+            $CURRENT_PAGE = "backend.manage.product_specifications";
+            $CONFIG_NAME = "Product Specifications";
+            $CONFIG_NAME_VI = "Thông số sản phẩm";
+            break;
+        case "/php/eshop/backend/pages/manage/products.php":
+            $CURRENT_PAGE = "backend.manage.products";
+            $CONFIG_NAME = "Product";
+            $CONFIG_NAME_VI = "Sản phẩm";
+            break;
+        case "/php/eshop/backend/pages/manage/shippers.php":
+            $CURRENT_PAGE = "backend.manage.shippers";
+            $CONFIG_NAME = "Shippers";
+            $CONFIG_NAME_VI = "Nhân viên giao hàng";
+            break;
+        case "/php/eshop/backend/pages/manage/specifications.php":
+            $CURRENT_PAGE = "backend.manage.specifications";
+            $CONFIG_NAME = "Specifications";
+            $CONFIG_NAME_VI = "Thông số kỹ thuật";
+            break;
+        case "/php/eshop/backend/pages/manage/suppliers.php":
+            $CURRENT_PAGE = "backend.manage.suppliers";
+            $CONFIG_NAME = "Suppliers";
+            $CONFIG_NAME_VI = "Nhà cung cấp";
             break;
         
-        // Tên trang và Tiêu đề mặc định
         default:
             $CURRENT_PAGE = "backend.pages.index";
-            $PAGE_TITLE = "Quản trị " . $SHOP_NAME;
+            $CONFIG_NAME = "Admin";
+            break;
     }
+
+    $PAGE_TITLE .= ' | ' . $CONFIG_NAME;
 ?>

@@ -48,8 +48,13 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
+<<<<<<< HEAD
             <h5 class="m-0 font-weight-bold text-primary">Quản lý Thương hiệu</h5>
             <button class="btn btn-primary" id="clickBtnCreate">Thêm mới</button>
+=======
+            <h5 class="m-0 font-weight-bold text-primary">Quản lý <?= $CONFIG_TITLE ?></h5>
+            <a href="CreateBrand.php" class="btn btn-primary">Thêm mới</a>
+>>>>>>> develop
         </div>
         <div class="card-body">
             <?php if($brands_list): ?>

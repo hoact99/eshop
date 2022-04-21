@@ -1,5 +1,5 @@
 <!-- Nhúng file cấu hình để xác định được Tên và Tiêu đề của trang hiện tại người dùng đang truy cập -->
-<?php include_once('config.php'); ?>
+<?php include('config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
