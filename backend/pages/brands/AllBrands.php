@@ -33,14 +33,8 @@
         }
     ?>
 
-    <?php 
-        $checkForm = true;
-    ?>
-    <script>
-        <?php
-            echo "var jscheckForm ='$checkForm';";
-         ?>
-    </script>
+    <?php $checkForm = true; ?>
+    <script><?= "var jscheckForm ='$checkForm';"; ?></script>
 
     <?php 
         
@@ -48,13 +42,8 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-<<<<<<< HEAD
-            <h5 class="m-0 font-weight-bold text-primary">Quản lý Thương hiệu</h5>
+            <h5 class="m-0 font-weight-bold text-primary">Quản lý <?= $CONFIG_NAME_VI ?></h5>
             <button class="btn btn-primary" id="clickBtnCreate">Thêm mới</button>
-=======
-            <h5 class="m-0 font-weight-bold text-primary">Quản lý <?= $CONFIG_TITLE ?></h5>
-            <a href="CreateBrand.php" class="btn btn-primary">Thêm mới</a>
->>>>>>> develop
         </div>
         <div class="card-body">
             <?php if($brands_list): ?>
@@ -84,7 +73,7 @@
                             <td class="text-left text-break"><?= $brand['brand_description'] ?></td>
                             <td>
                                 <!-- Nút sửa, bấm vào sẽ hiển thị form hiệu chỉnh thông tin dựa vào khóa chính `lsp_ma` -->
-                                <!-- <a href="EditBrand.php?id=<?= $brand['brand_id'] ?>" class="btn btn-warning">
+                                <!-- <a href="?id=<?= $brand['brand_id'] ?>" class="btn btn-warning">
                                     <span data-feather="edit"></span> Sửa
                                 </a> -->
                                 <button class="btn btn-warning" id="clickBtnUpdate">Sửa</button>
@@ -219,6 +208,7 @@
     */
     // Chuẩn bị câu truy vấn $sqlSelect, lấy dữ liệu ban đầu của record cần update
     // Lấy giá trị khóa chính được truyền theo dạng QueryString Parameter key1=value1&key2=value2...
+    
     $brand_id = $_GET['id'];
     $sqlSelect = "SELECT * FROM `brands` WHERE id=$brand_id;";
 

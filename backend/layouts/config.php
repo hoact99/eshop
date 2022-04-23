@@ -119,6 +119,11 @@
             $CONFIG_NAME = "Suppliers";
             $CONFIG_NAME_VI = "Nhà cung cấp";
             break;
+        case "/php/eshop/backend/pages/brands/AllBrands.php":
+            $CURRENT_PAGE = "backend.brands.allbrands";
+            $CONFIG_NAME = "Brands";
+            $CONFIG_NAME_VI = "Thương hiệu";
+            break;
         
         default:
             $CURRENT_PAGE = "backend.pages.index";
