@@ -22,5 +22,5 @@
     mysqli_close($conn);
 
     // Sau khi cập nhật dữ liệu, tự động điều hướng về trang Danh sách
-    header('location:AllBrands.php');
+    header('location:brands.php');
 ?>

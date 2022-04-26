@@ -10,13 +10,13 @@
 
 <!-- Page level plugins -->
 <!-- Error: Cannot read properties of null (reading 'length') -->
-<!-- <script src="../../../assets/vendor/chart.js/Chart.min.js"></script> -->
+<script src="../../../assets/vendor/chart.js/Chart.min.js"></script>
 
 <!-- Page level custom scripts -->
 <!-- Error: Chart is not defined -->
-<!-- <script src="../../../assets/js/demo/chart-area-demo.js"></script>
+<script src="../../../assets/js/demo/chart-area-demo.js"></script>
 <script src="../../../assets/js/demo/chart-pie-demo.js"></script>
-<script src="../../../assets/js/demo/chart-bar-demo.js"></script> -->
+<script src="../../../assets/js/demo/chart-bar-demo.js"></script>
 
 <!-- Page level plugins -->
 <script src="../../../assets/vendor/datatables/jquery.dataTables.min.js"></script>

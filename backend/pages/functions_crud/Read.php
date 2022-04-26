@@ -28,8 +28,8 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h5 class="m-0 font-weight-bold text-primary">Quản lý <?= $CONFIG_NAME_VI; ?></h5>
-            <a href="../functions_crud/Create.php?tb=<?= $TABLENAME ?>" class="btn btn-primary">Thêm mới</a>
+            <h5 class="m-0 font-weight-bold text-primary">Quản lý <?= $CONFIG_NAME_VI ?></h5>
+            <a href="<?= $TABLENAME ?>.php?action=create&tb=<?= $TABLENAME ?>" class="btn btn-primary btn-create">Thêm mới</a>
         </div>
         <div class="card-body">
             <?php if($itemList): ?>
@@ -39,8 +39,8 @@
                         <tr>
                             <th class="col-1">Mã</th>
                             <th>Tên <?= $CONFIG_NAME_VI ?></th>
-                            <th>Mô tả</th>
-                            <th class="col-2">Hành động</th>
+                            <th class="col-7">Mô tả</th>
+                            <th>Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,7 +51,7 @@
                             <td class="text-left text-break"><?= $item['description'] ?></td>
                             <td>
                                 <!-- Nút sửa, bấm vào sẽ hiển thị form hiệu chỉnh thông tin dựa vào khóa chính `lsp_ma` -->
-                                <a href="Edit.php?id=<?= $item['id'] ?>" class="btn btn-warning">
+                                <a href="<?= $TABLENAME ?>.php?action=update&id=<?= $item['id'] ?>&tb=<?= $TABLENAME ?>" class="btn btn-warning">
                                     <span data-feather="edit"></span> Sửa
                                 </a>
                                 <a href="../functions_crud/Delete.php?tb=<?= $TABLENAME ?>&id=<?= $item['id'] ?>" class="btn btn-danger btn-delete">
@@ -65,7 +65,7 @@
             </div>
             <?php 
                 else:
-                    echo 'Bạn chưa có ' . $CONFIG_NAME_VI . ' nào.';
+                    echo "Bạn chưa có $CONFIG_NAME_VI nào.";
                 endif; 
             ?>
         </div>
