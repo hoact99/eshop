@@ -1,12 +1,18 @@
-:root {
+:root, html[data-theme='light'] {
+    --sidebar-text-color: #fff;
+    --text-color: #000;
     --primary: var(--blue);
     --secondary: var(--gray);
     --success: var(--green);
     --info: var(--cyan);
     --warning: var(--yellow);
     --danger: var(--red);
-    --light: #f8f9fc;
+    --light: var(--white-light);
     --dark: var(--gray-dark);
+}
+
+#accordionSidebar a {
+    color: var(--sidebar-text-color) !important;
 }
 
 .btn,
@@ -109,3 +115,26 @@
 .btn:not(:disabled).active {
 
 }
+
+html[data-theme='dark'] {
+    --primary: #000;
+    --secondary: var(--gray);
+    --success: var(--green);
+    --info: var(--cyan);
+    --warning: var(--yellow);
+    --danger: var(--red);
+    --light: #666;
+    --dark: #999;
+    --white: #fff;
+    color: red !important;
+}
+
+/* [data-theme='dark'] .form-control {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 0, 0, 0.6);
+    color: var(--text-color) !important;
+}
+
+[data-theme='dark'] .form-control:focus {
+    color: var(--text-color) !important;
+} */

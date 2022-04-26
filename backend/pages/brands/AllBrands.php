@@ -209,12 +209,12 @@
     // Chuẩn bị câu truy vấn $sqlSelect, lấy dữ liệu ban đầu của record cần update
     // Lấy giá trị khóa chính được truyền theo dạng QueryString Parameter key1=value1&key2=value2...
     
-    $brand_id = $_GET['id'];
-    $sqlSelect = "SELECT * FROM `brands` WHERE id=$brand_id;";
+    // $brand_id = $_GET['id'];
+    // $sqlSelect = "SELECT * FROM `brands` WHERE id=$brand_id;";
 
     // Thực thi câu truy vấn SQL để lấy về dữ liệu ban đầu của record cần update
-    $resultSelect = mysqli_query($conn, $sqlSelect);
-    $brandRow = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC); // 1 record
+    // $resultSelect = mysqli_query($conn, $sqlSelect);
+    // $brandRow = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC); // 1 record
     /* --- End Truy vấn dữ liệu Sản phẩm theo khóa chính --- */
 ?>
 
