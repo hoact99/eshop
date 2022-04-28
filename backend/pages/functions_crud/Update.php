@@ -1,6 +1,9 @@
+<?php include '../classes/generate.php'; ?>
+
 <?php
     $TABLENAME = $_GET['tb'];
     $id = $_GET['id'];
+    $action = $_GET['action'];
 
     // Hiển thị tất cả lỗi trong PHP
     // Chỉ nên hiển thị lỗi khi đang trong môi trường Phát triển (Development)
@@ -33,64 +36,9 @@
         <h5 class="m-0 font-weight-bold text-primary">Chỉnh sửa <?= $CONFIG_NAME_VI ?></h5>
     </div>
     <div class="card-body">
-        <form action="" method="post" name="frmBrand" id="frmBrand" class="w-100">
-            <div class="form-group">
-                <label for="id">Mã <?= $CONFIG_NAME_VI ?></label>
-                <input type="text" class="form-control" id="id" name="id" placeholder="Mã" value="<?= $row['id'] ?>" readonly>
-            </div>
-            <div class="form-group">
-                <div class="d-flex justify-content-between">
-                    <label for="name">Nhập tên <?= $CONFIG_NAME_VI ?></label>
-                    <span id="name_length" class="text-right"></span>
-                </div>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Tên <?= $CONFIG_NAME_VI ?>" value="<?= $row['name'] ?>" maxlength="50" oninput="inputLength('name_length', this);">
-            </div>
-            <div class="form-group">
-                <div class="d-flex justify-content-between">
-                    <label for="description">Nhập mô tả <?= $CONFIG_NAME_VI ?></label>
-                    <span id="description_length" class="text-right"></span>
-                </div>
-                <textarea type="text" class="form-control" id="description" name="description" placeholder="Mô tả <?= $CONFIG_NAME_VI ?>" maxlength="255" oninput="inputLength('description_length', this);"><?= $row['description'] ?></textarea>
-            </div>
-            <button class="btn btn-primary" name="btnSave">Lưu dữ liệu</button>
-            <a class="btn btn-warning" href="<?= $TABLENAME ?>.php" name="btnCancel">Quay lại</a>
-        </form>
+        <?php echo genUpdateForm($row, $TABLENAME, $action); ?>
     </div>
 </div>
-
-<?php
-
-    // 2. Nếu người dùng có bấm nút "Lưu dữ liệu"
-    if (isset($_POST['btnSave'])) {
-        // Lấy dữ liệu người dùng hiệu chỉnh gởi từ REQUEST POST
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-
-        // Kiểm tra ràng buộc dữ liệu (Validation)
-        // Tạo biến lỗi để chứa thông báo lỗi
-        $errors = [];
-
-        // Validate Tên loại Sản phẩm
-        // required
-        if (empty($name)) {
-            $errors['name'][] = [
-                'rule' => 'required',
-                'rule_value' => true,
-                'value' => $name,
-                'msg' => 'Vui lòng nhập tên <?= $CONFIG_NAME_VI ?>'
-            ];
-        }
-        // minlength 3
-        if (!empty($name) && strlen($name) < 3) {
-            $errors['name'][] = [
-                'rule' => 'minlength',
-                'rule_value' => 3,
-                'value' => $name,
-                'msg' => 'Tên <?= $CONFIG_NAME_VI ?> phải có ít nhất 3 ký tự'
-            ];
-        }
-    }
-?>
 
 <!-- Nếu có lỗi VALIDATE dữ liệu thì hiển thị ra màn hình 
 - Sử dụng thành phần (component) Alert của Bootstrap
@@ -121,8 +69,18 @@
         // VALIDATE dữ liệu đã hợp lệ
         // Thực thi câu lệnh SQL QUERY
         // Câu lệnh UPDATE
-        $sql = "UPDATE `$TABLENAME` SET name = '$name', description = '$description' WHERE id = $id;";
-
+        $sql_set_update = "";
+        foreach ($row as $key => $value) {
+            if ($value == "") {
+                $value = "NULL";
+            }
+            if ($key != "id") {
+                $sql_set_update .= "$key='$_POST[$key]',";
+            }
+        }
+        $sql_set_update = substr($sql_set_update, 0, -1);
+        $sql = "UPDATE `$TABLENAME` SET $sql_set_update WHERE id = $id;";
+        echo $sql;
         //Thực thi INSERT
         mysqli_query($conn, $sql) or 
         die("<b>Có lỗi khi thực thi câu lệnh SQL: </b>" . mysqli_error($conn) . "<br /><b>Câu lệnh vừa thực thi:</b></br>$sql");
