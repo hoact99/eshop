@@ -1,4 +1,4 @@
-var checkForm = jscheckForm == 1 ? true : false;
+// var checkForm = jscheckForm == 1 ? true : false;
 $("#clickBtnCreate").click(function(){
     $('#readForm').toggle('formTurnLeft');
     checkForm == true ? checkForm = false : checkForm;

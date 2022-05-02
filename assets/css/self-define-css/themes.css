@@ -1,11 +1,16 @@
-:root {
+* {
+    transition: 0.2s !important;
+}
+
+html[data-theme='light'] {
+    --text-color: #000;
     --primary: var(--blue);
     --secondary: var(--gray);
     --success: var(--green);
     --info: var(--cyan);
     --warning: var(--yellow);
     --danger: var(--red);
-    --light: #f8f9fc;
+    --light: var(--white-light);
     --dark: var(--gray-dark);
 }
 
@@ -108,4 +113,42 @@
 }
 .btn:not(:disabled).active {
 
+}
+
+html[data-theme='dark'] div,
+html[data-theme='dark'] .table td {
+    color: #fff !important;
+}
+
+html[data-theme='dark'] .table th,
+html[data-theme='dark'] .sidebar,
+html[data-theme='dark'] .topbar {
+    background-color: #242526 !important;
+    background-image: none;
+    color: #fff !important;
+}
+
+html[data-theme='dark'] #content-wrapper {
+    background-color: #18191a !important;
+    color: #fff !important;
+}
+
+html[data-theme='dark'] .card {
+    background-color: #303031 !important;
+    color: #fff !important;
+}
+
+html[data-theme='dark'] .card-header,
+html[data-theme='dark'] .bg-white,
+html[data-theme='dark'] .dropdown-menu {
+    background-color: #454545 !important;
+}
+
+html[data-theme='dark'] a[class="collapse-item"]:hover,
+html[data-theme='dark'] a[class="collapse-item active"]:hover {
+    background-color: #999 !important;
+}
+
+html[data-theme='dark'] .bg-white a[class="collapse-item"] {
+    color: #e4e6eb !important;
 }

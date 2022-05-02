@@ -95,6 +95,8 @@
         </div>
     </div>
 
+    
+
     <!-- Error: $ is not defined -->
     <!-- <script>
         $(".btn-warning").click(function(e) {
@@ -209,12 +211,12 @@
     // Chuẩn bị câu truy vấn $sqlSelect, lấy dữ liệu ban đầu của record cần update
     // Lấy giá trị khóa chính được truyền theo dạng QueryString Parameter key1=value1&key2=value2...
     
-    $brand_id = $_GET['id'];
-    $sqlSelect = "SELECT * FROM `brands` WHERE id=$brand_id;";
+    // $brand_id = $_GET['id'];
+    // $sqlSelect = "SELECT * FROM `brands` WHERE id=$brand_id;";
 
     // Thực thi câu truy vấn SQL để lấy về dữ liệu ban đầu của record cần update
-    $resultSelect = mysqli_query($conn, $sqlSelect);
-    $brandRow = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC); // 1 record
+    // $resultSelect = mysqli_query($conn, $sqlSelect);
+    // $brandRow = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC); // 1 record
     /* --- End Truy vấn dữ liệu Sản phẩm theo khóa chính --- */
 ?>
 
@@ -329,41 +331,41 @@
 </div>
 
 <script>
-$(function() {
-    $("#frmBrand").validate({
-        rules: {
-            brand_name: {
-                required: true,
-                minlength: 3,
-                maxlength: 50
-            }
-        },
-        messages: {
-            brand_name: {
-                required: "Vui lòng nhập tên Thương hiệu",
-                minlength: "Tên Thương hiệu phải có ít nhất 3 ký tự",
-                maxlength: "Tên Thương hiệu không được vượt quá 50 ký tự"
-            }
-        },
-        errorElement: "em",
-        errorPlacement: function(error, element) {
-            // Thêm class `invalid-feedback` cho field đang có lỗi
-            error.addClass("invalid-feedback");
-            if (element.prop("type") === "checkbox") {
-                error.insertAfter(element.parent("label"));
-            } else {
-                error.insertAfter(element);
-            }
-        },
-        success: function(label, element) {},
-        highlight: function(element, errorClass, validClass) {
-            $(element).addClass("is-invalid").removeClass("is-valid");
-        },
-        unhighlight: function(element, errorClass, validClass) {
-            $(element).addClass("is-valid").removeClass("is-invalid");
-        }
-    });
-});
+// $(function() {
+//     $("#frmBrand").validate({
+//         rules: {
+//             brand_name: {
+//                 required: true,
+//                 minlength: 3,
+//                 maxlength: 50
+//             }
+//         },
+//         messages: {
+//             brand_name: {
+//                 required: "Vui lòng nhập tên Thương hiệu",
+//                 minlength: "Tên Thương hiệu phải có ít nhất 3 ký tự",
+//                 maxlength: "Tên Thương hiệu không được vượt quá 50 ký tự"
+//             }
+//         },
+//         errorElement: "em",
+//         errorPlacement: function(error, element) {
+//             // Thêm class `invalid-feedback` cho field đang có lỗi
+//             error.addClass("invalid-feedback");
+//             if (element.prop("type") === "checkbox") {
+//                 error.insertAfter(element.parent("label"));
+//             } else {
+//                 error.insertAfter(element);
+//             }
+//         },
+//         success: function(label, element) {},
+//         highlight: function(element, errorClass, validClass) {
+//             $(element).addClass("is-invalid").removeClass("is-valid");
+//         },
+//         unhighlight: function(element, errorClass, validClass) {
+//             $(element).addClass("is-valid").removeClass("is-invalid");
+//         }
+//     });
+// });
 </script>
 
  <!-- 
