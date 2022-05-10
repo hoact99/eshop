@@ -10,11 +10,11 @@
     <h1>COOKIE</h1>
 
     <form name="myform" action="">
-      Enter name: <input type="text" name="customer" />
-      <input type="button" value="Set Cookie" onclick="WriteCookie();" />
+      Enter name: <input type="text" name="customer" id="customer" />
+      <input type="button" value="Set Cookie" onclick="setCookie('userCookie', document.getElementById('customer').value, '7');" />
     </form>
 
-    <input type="button" value="Get Cookie" onclick="ReadCookie()"/>
+    <input type="button" value="Get Cookie" onclick="getCookie('userCookie');" />
     
     <script src="cookie_script.js"></script>
   </body>
