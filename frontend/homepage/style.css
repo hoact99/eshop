@@ -2,7 +2,7 @@
 
 .nav {
     min-height: 42px;
-    background-color: lightcoral;
+    background-color: #454545;
     display: flex;
     justify-content: space-between;
 }
@@ -43,7 +43,7 @@
 }
 
 .main-column {
-    flex: 3;
+    flex: 1;
 }
 
 /* End column layout */
@@ -80,9 +80,9 @@
 }
 
 .wrap-layout__item {
-    width: 148px;
+    width: 200px;
     height: 90px;
-    color: bisque;
+    color: rgb(255, 255, 255);
     text-align: center;
     line-height: 90px;
     font-size: 48px;
@@ -102,7 +102,7 @@
 }
 
 .footer-item {
-    padding: 12px 16px;
+    padding: 12px 8px;
     margin-top: 16px;
     flex-basis: 30%;
 }
